@@ -7,6 +7,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -15,7 +16,7 @@ import javax.persistence.Table;
 public class Concierto {
 	//Atributos
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
 	@Column
     private String grupos;
@@ -30,9 +31,9 @@ public class Concierto {
 	@Column
     private float precio;
 	@Column
-    private boolean asistido;
+    private int asistido;
 	@Column
-    private boolean cancelado;
+    private int cancelado;
 
 
     //Metodos
@@ -85,19 +86,19 @@ public class Concierto {
     }
 
     public boolean isAsistido() {
-        return asistido;
+        return asistido == 1?true:false;
     }
 
     public void setAsistido(boolean asistido) {
-        this.asistido = asistido;
+        this.asistido = asistido?1:0;
     }
 
     public boolean isCancelado() {
-        return cancelado;
+        return cancelado == 1?true:false;
     }
 
     public void setCancelado(boolean cancelado) {
-        this.cancelado = cancelado;
+        this.cancelado = cancelado?1:0;
     }
 
     public float getPrecio() {

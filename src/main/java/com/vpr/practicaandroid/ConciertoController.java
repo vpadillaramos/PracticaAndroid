@@ -50,6 +50,23 @@ public class ConciertoController {
 		
 	}
 	
+	@RequestMapping("/guardar_demo")
+	public void guardarDemo() {
+		Concierto concierto = new Concierto();
+		
+		concierto.setGrupos("Grupo2");
+		concierto.setFecha(new Date());
+		concierto.setHora("");
+		concierto.setLatitud(40.4011814f);
+		concierto.setLongitud(-3.6752631f);
+		concierto.setPrecio(3.3f);
+		concierto.setAsistido(true);
+		concierto.setCancelado(false);
+		
+		// Guardo el concierto
+		rep.save(concierto);
+	}
+	
 	/**
      * Metodo para obtener una fecha Date de una DB pasado como String
      * @param fecha String
@@ -57,8 +74,9 @@ public class ConciertoController {
      * @throws ParseException
      */
     public static Date parsearFecha(String fecha) throws ParseException {
+    	if(fecha == null || fecha.isEmpty())
+    		return null;
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
         return sdf.parse(fecha);
     }
 }
