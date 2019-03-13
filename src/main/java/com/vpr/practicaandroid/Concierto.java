@@ -25,9 +25,9 @@ public class Concierto {
 	@Column
     private String hora;
 	@Column
-    private float latitud;
+    private double latitud;
 	@Column
-	private float longitud;
+	private double longitud;
 	@Column
     private float precio;
 	@Column
@@ -69,19 +69,19 @@ public class Concierto {
         this.hora = hora;
     }
     
-    public float getLatitud() {
+    public double getLatitud() {
     	return latitud;
     }
 
-    public void setLatitud(float latitud) {
+    public void setLatitud(double latitud) {
         this.latitud = latitud;
     }
     
-    public float getLongitud() {
+    public double getLongitud() {
     	return longitud;
     }
 
-    public void setLongitud(float longitud) {
+    public void setLongitud(double longitud) {
         this.longitud = longitud;
     }
 

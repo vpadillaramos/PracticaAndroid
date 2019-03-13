@@ -25,8 +25,8 @@ public class ConciertoController {
 	}
 	
 	@RequestMapping("/guardar_concierto")
-	public void guardarConcierto(String grupos, String fecha, String hora, float latitud,
-			float longitud, float precio, boolean asistido, boolean cancelado) {
+	public void guardarConcierto(String grupos, String fecha, String hora, double latitud,
+			double longitud, float precio, boolean asistido, boolean cancelado) {
 		
 		
 		try {
